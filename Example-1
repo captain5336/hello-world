@@ -1,0 +1,32 @@
+# -*- coding: UTF-8 -*-
+import re
+import MySQLdb
+
+def get_formatted_name(first,last):
+	"""Generate a neatly formatted full name."""
+	full_name=first + ' ' + last
+	return full_name.title()
+
+# start running 
+name=raw_input("What is your name: ")
+print("Hello, "+name+"!")
+name=['Jack','Peter','Rose']
+assert len(name)>=2,'Test: greater than limitation'
+print('the position is:', re.match('www','www.sina.com').span())
+
+db = MySQLdb.conect(
+	host="localhost",
+	user="root",
+	db='lx' 
+	)
+
+	
+# cursor=db.cursor()
+# cursor.execute("select version()")
+# data=cursor.fetchone()
+# print "Database version : %s" %data
+
+db.close()
+
+# The pause is for looking screen
+s=input("Press <enter> ")
